@@ -1,39 +1,61 @@
-<div class="background-image-container mt-ncs">
-  <div class="container">
-    <div class="jumbotron jumbotron-fluid">
-      <div class="d-flex flex-wrap">
-        <div>
-          <h1 class="display-3">DSpace 8</h1>
-          <p class="lead">DSpace is the world leading open source repository platform that enables
-            organisations to:</p>
+<div>
+  <div class="background-image-container mt-ncs">
+    <div class="container">
+      <div class="jumbotron jumbotron-fluid">
+        <h1 class="display-3">Agenda Aí</h1>
+        <p class="lead">Não espere pelo lanche, faça ele esperar por você</p>
+        <ul>
+          <li>Facilidade para agendar pedidos de lanches de forma antecipada.</li>
+          <li>Maior organização para cantinas escolares e seus clientes.</li>
+          <li>Receba notificações sobre pedidos e horários de retirada.</li>
+        </ul>
+        <p>Faça parte do sistema que conecta escolas, cantinas e alunos com agilidade e praticidade.</p>
+      </div>
+    </div>
+    <picture class="background-image">
+      <img alt="Banner Agenda Aí" [src]="'assets/agendaai/images/background.png'" />
+    </picture>
+    <small class="credits">Photo by <a href="https://www.pexels.com">&#64;pa_images</a></small>
+  </div>
+
+  <div class="container mt-3">
+    <h2 class="text-center">Estabelecimentos Parceiros</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 d-flex align-items-center">
+          <div class="card-body d-flex">
+            <img src="assets/agendaai/images/pa_lanches.png" class="card-img-left" alt="Estabelecimento 1">
+            <div class="card-info ml-3">
+              <h5 class="card-title">PA Lanches</h5>
+              <p class="card-text">Avenida Tininha de Sá Urtiga, 549 - Boa Sorte</p>
+            </div>
+          </div>
         </div>
       </div>
-      <ul>
-        <li>easily ingest documents, audio, video, datasets and their corresponding Dublin Core
-          metadata
-        </li>
-        <li>open up this content to local and global audiences, thanks to the OAI-PMH interface and
-          Google Scholar optimizations
-        </li>
-        <li>issue permanent urls and trustworthy identifiers, including optional integrations with
-          handle.net and DataCite DOI
-        </li>
-      </ul>
-      <p>Join an international community of <a href="https://wiki.lyrasis.org/display/DSPACE/DSpace+Positioning" target="_blank">leading institutions using DSpace</a>.</p>
-      <p>The test user accounts below have their password set to the name of this
-        software in lowercase.</p>
-      <ul>
-        <li>Demo Site Administrator = dspacedemo+admin&#64;gmail.com</li>
-        <li>Demo Community Administrator = dspacedemo+commadmin&#64;gmail.com</li>
-        <li>Demo Collection Administrator = dspacedemo+colladmin&#64;gmail.com</li>
-        <li>Demo Submitter = dspacedemo+submit&#64;gmail.com</li>
-      </ul>
+
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 d-flex align-items-center">
+          <div class="card-body d-flex">
+            <img src="assets/agendaai/images/logo_ifpi.png" class="card-img-left" alt="Estabelecimento 2">
+            <div class="card-info ml-3">
+              <h5 class="card-title">Cantina IFPI</h5>
+              <p class="card-text">Avenida Pedro Marques - Parque Industrial</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 d-flex align-items-center">
+          <div class="card-body d-flex">
+            <img src="assets/agendaai/images/miranda_lanches.png" class="card-img-left" alt="Estabelecimento 3">
+            <div class="card-info ml-3">
+              <h5 class="card-title">Lanchonete Miranda</h5>
+              <p class="card-text">Avenida Pedro Marques - Parque Industrial</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <picture class="background-image">
-    <source type="image/webp" srcset="assets/dspace/images/banner.webp 2000w, assets/dspace/images/banner-half.webp 1200w, assets/dspace/images/banner-tall.webp 768w">
-    <source type="image/jpg" srcset="assets/dspace/images/banner.jpg 2000w, assets/dspace/images/banner-half.jpg 1200w, assets/dspace/images/banner-tall.jpg 768w">
-    <img alt="" [src]="'assets/dspace/images/banner.jpg'"/><!-- without the []="''" Firefox downloads both the fallback and the resolved image -->
-  </picture>
-  <small class="credits">Photo by <a href="https://www.pexels.com/@inspiredimages">&#64;inspiredimages</a></small>
 </div>

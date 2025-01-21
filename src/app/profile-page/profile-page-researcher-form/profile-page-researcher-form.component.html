@@ -12,7 +12,7 @@
   <div *ngIf="!researcherProfile">
     <p>{{'researcher.profile.not.associated' | translate}}</p>
   </div>
-  <button *ngIf="!researcherProfile" class="btn btn-primary mr-2"
+  <button *ngIf="!researcherProfile" class="pa-btn pa-btn-primary mr-2"
           [disabled]="(isProcessingCreate() | async)"
           (click)="createProfile()">
     <span *ngIf="(isProcessingCreate() | async)">
@@ -23,10 +23,10 @@
     </span>
   </button>
   <ng-container *ngIf="researcherProfile">
-    <button class="btn btn-primary mr-2" [disabled]="!researcherProfile" (click)="viewProfile(researcherProfile)">
+    <button class="pa-btn pa-btn-primary mr-2" [disabled]="!researcherProfile" (click)="viewProfile(researcherProfile)">
       <i class="fas fa-info-circle"></i> {{'researcher.profile.view' | translate}}
     </button>
-    <button class="btn btn-danger" [disabled]="!researcherProfile" (click)="deleteProfile(researcherProfile)">
+    <button class="pa-btn btn-danger" [disabled]="!researcherProfile" (click)="deleteProfile(researcherProfile)">
         <span *ngIf="(isProcessingDelete() | async)">
             <i class='fas fa-circle-notch fa-spin'></i> {{'researcher.profile.action.processing' | translate}}
         </span>

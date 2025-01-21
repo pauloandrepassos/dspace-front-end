@@ -46,6 +46,7 @@ import { ProfileClaimItemModalComponent } from '../profile-claim-item-modal/prof
 
 @Component({
   selector: 'ds-profile-page-researcher-form',
+  styleUrls: ['./profile-page-researcher-form.component.scss'],
   templateUrl: './profile-page-researcher-form.component.html',
   imports: [
     NgIf,

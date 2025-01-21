@@ -70,4 +70,54 @@
   }
 }
 
+.card {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  .card-body {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    .card-img-left {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .card-info {
+      margin-left: 15px;
+      h5.card-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+      }
+      p.card-text {
+        font-size: 1rem;
+        color: #555;
+      }
+    }
+  }
+}
 
+@media (max-width: 767px) {
+  .row {
+    display: block;
+    .col-md-4 {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  .card-body {
+    flex-direction: column;
+    .card-img-left {
+      margin-bottom: 15px;
+      width: 100%;
+      height: auto;
+    }
+    .card-info {
+      margin-left: 0;
+    }
+  }
+}

@@ -1,43 +1,57 @@
 <ng-container *ngVar="(user$ | async) as user">
   <div class="container" *ngIf="user">
     <h1>{{'profile.title' | translate}}</h1>
-    <ng-container>
-      <div class="card mb-4">
-        <div class="card-header">{{'profile.card.researcher' | translate}}</div>
-        <div class="card-body">
-          <div class="mb-4">
-            <ds-profile-page-researcher-form [user]="user" ></ds-profile-page-researcher-form>
+    <div class="profile-grid">
+      <div class="profile-item profile-researcher">
+        <div class="pa-card">
+          <div class="pa-card-header">{{'profile.card.researcher' | translate}}</div>
+          <div class="pa-card-body">
+            <div class="mb-4">
+              <ds-profile-page-researcher-form [user]="user"></ds-profile-page-researcher-form>
+            </div>
+            <ds-suggestions-notification></ds-suggestions-notification>
           </div>
-          <ds-suggestions-notification></ds-suggestions-notification>
         </div>
       </div>
-    </ng-container>
-    <div class="card mb-4">
-      <div class="card-header">{{'profile.card.identify' | translate}}</div>
-      <div class="card-body">
-        <ds-profile-page-metadata-form [user]="user"></ds-profile-page-metadata-form>
+
+      <div class="profile-item profile-identify">
+        <div class="pa-card">
+          <div class="pa-card-header">{{'profile.card.identify' | translate}}</div>
+          <div class="pa-card-body">
+            <ds-profile-page-metadata-form [user]="user"></ds-profile-page-metadata-form>
+          </div>
+        </div>
       </div>
-    </div>
-    <div *ngIf="canChangePassword$ | async" class="card mb-4 security-section">
-      <div class="card-header">{{'profile.card.security' | translate}}</div>
-      <div class="card-body">
-        <ds-profile-page-security-form
+      <ng-container *ngIf="canChangePassword$ | async">
+        <div class="profile-item profile-security">
+          <div class="pa-card">
+            <div class="pa-card-header">{{'profile.card.security' | translate}}</div>
+            <div class="pa-card-body">
+              <ds-profile-page-security-form
                 [FORM_PREFIX]="'profile.security.form.'"
                 (isInvalid)="setInvalid($event)"
                 (passwordValue)="setPasswordValue($event)"
                 (currentPasswordValue)="setCurrentPasswordValue($event)"
-        ></ds-profile-page-security-form>
-      </div>
+              ></ds-profile-page-security-form>
+            </div>
+          </div>
+        </div>
+      </ng-container>
     </div>
-    <div class="col-12 text-right pr-0">
-      <button class="btn btn-primary" (click)="updateProfile()"><i class="fas fa-edit"></i> {{'profile.form.submit' | translate}}</button>
+
+    <div class="col-12 text-right pr-0 mt-3">
+      <button class="pa-btn pa-btn-primary" (click)="updateProfile()">
+        <i class="fas fa-edit"></i> {{'profile.form.submit' | translate}}
+      </button>
     </div>
 
     <ng-container *ngVar="(groupsRD$ | async)?.payload?.page as groups">
       <div *ngIf="groups?.length > 0">
         <h2 class="mt-4">{{'profile.groups.head' | translate}}</h2>
         <ul class="list-group list-group-flush">
-          <li *ngFor="let group of groups" class="list-group-item">{{ dsoNameService.getName(group) }}</li>
+          <li *ngFor="let group of groups" class="list-group-item">
+            {{ dsoNameService.getName(group) }}
+          </li>
         </ul>
       </div>
     </ng-container>
@@ -50,7 +64,7 @@
             {{ dsoNameService.getName(specialGroup) }}
           </li>
         </ul>
-     </div>
+      </div>
     </ng-container>
   </div>
 </ng-container>
